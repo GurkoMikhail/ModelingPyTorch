@@ -24,7 +24,7 @@ class Particles:
     def move(self, distance):
         """ Переместить частицы """
         self._distance_traveled += distance
-        self._coordinates += torch.column_stack([distance]*3)
+        self._coordinates += self._direction*torch.column_stack([distance]*3)
 
     def rotate(self, theta, phi, mask):
         """
